@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Meu Blog {% endblock %}
+{% block content %}
+
+   {% for post in object_list %}
+      <div class="post-entry">
+         <h1><a href=" {% url 'detail' post.slug.slug } ">{{ post.title }}</a></h1>
+         <p> {{post.body }} </p>
+     </div>
+   {% endfor %}
+{% endblock %}
